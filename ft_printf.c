@@ -23,7 +23,7 @@ int	pf_print(va_list *ap, char spec, int count)
 	else if (spec == '%')
 		count = pf_putchar('%');
 	else if (spec == 's')
-		count = pf_putchar(va_arg(*ap, char *))
+		count = ft_putstr(va_arg(*ap, char *));
 	return (count);
 }
 
@@ -62,7 +62,7 @@ int	pf_verify(char c)
 	return (0);
 }
 
-int	pf_putchar(int c, int n)
+int	pf_putchar(int c)
 {
-	return (write(1, &c, n);
+	return (write(1, &c, 1));
 }

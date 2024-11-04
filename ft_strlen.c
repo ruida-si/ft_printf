@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruida-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:33:44 by ruida-si          #+#    #+#             */
-/*   Updated: 2024/11/04 14:36:21 by ruida-si         ###   ########.fr       */
+/*   Created: 2024/10/18 15:55:46 by ruida-si          #+#    #+#             */
+/*   Updated: 2024/10/18 15:55:49 by ruida-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <stdarg.h>
-# include <unistd.h>
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
 
-int	ft_printf(const char *format, ...);
-int	ft_putstr(char *str);
-
-#endif
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+/*
+int main()
+{
+	char c[] = "Rui ";
+	printf("%li\n", ft_strlen(c));
+}
+*/
