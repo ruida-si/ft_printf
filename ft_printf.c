@@ -13,17 +13,25 @@
 #include "ft_printf.h"
 
 int	pf_verify(char c);
-int	pf_putchar(int c);
+int	ft_putchar(int c);
 
 int	pf_print(va_list *ap, char spec, int count)
 {
 	count = 0;
 	if (spec == 'c')
-		count = pf_putchar(va_arg(*ap, int));
+		count = ft_putchar(va_arg(*ap, int));
 	else if (spec == '%')
-		count = pf_putchar('%');
+		count = ft_putchar('%');
 	else if (spec == 's')
 		count = ft_putstr(va_arg(*ap, char *));
+	else if (spec == 'i' || spec == 'd')
+		count = ft_putnbr(va_arg(*ap, int));
+	else if (spec == 'u')
+		count = ft_putnbr(va_arg(*ap, unsigned int));
+	else if (spec == 'x')
+		count = ft_putnbr_hexa(va_arg(*ap, unsigned int), 0);
+	else if (spec == 'X')
+		count = ft_putnbr_hexa(va_arg(*ap, unsigned int), -32);
 	return (count);
 }
 
@@ -31,7 +39,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		count;
-	
+
 	count = 0;
 	va_start(ap, format);
 	while (*format)
@@ -41,7 +49,7 @@ int	ft_printf(const char *format, ...)
 			count += pf_print(&ap, *format, count);
 		}
 		else
-			count += pf_putchar(*format);
+			count += ft_putchar(*format);
 		format++;
 	}
 	va_end(ap);
@@ -62,7 +70,7 @@ int	pf_verify(char c)
 	return (0);
 }
 
-int	pf_putchar(int c)
+int	ft_putchar(int c)
 {
 	return (write(1, &c, 1));
 }

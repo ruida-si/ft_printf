@@ -14,19 +14,13 @@
 
 int main()
 {
-	char c = 'A';	
-	int count = ft_printf("MY: This is a character %c\n", c);
-	printf("TH: This is a character %c\n", c);
-	printf("%i chars\n", count);
+	char c = 'A';
+	char *str = 0x0;
+	int number = 2345615;
 
-	count = ft_printf("MY: This is a character %%\n");
-	printf("TH: This is a character %%\n");
-	printf("%i chars\n", count);
+	int count = ft_printf("MY: char %c percent %% string %s number %X\n", c, str, number);
+	ft_printf("%i chars\n", count);
 
-	char str[] = "campos";	
-	count = ft_printf("MY: This is a string %s\n", str);
-	printf("%i chars\n", count);
-
-	count = printf("OR: This is a string %s\n", str);
+	count = printf("OR: char %c percent %% string %s number %X\n", c, str, number);
 	printf("%i chars\n", count);
 }

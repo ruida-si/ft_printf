@@ -1,4 +1,4 @@
-SOURCES = main.c ft_putstr.c ft_printf.c
+SOURCES = main.c ft_putstr.c ft_printf.c ft_putnbr.c
 
 FLAGS = -Wall -Wextra -Werror
 

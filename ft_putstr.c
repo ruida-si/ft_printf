@@ -27,3 +27,34 @@ int	ft_putstr(char *str)
 	}
 	return (i);
 }
+
+int	ft_putnbr_hexa(int n, int cap)
+{
+	char	*hexa;
+	int		count;
+
+	count = 0;
+	hexa = "0123456789abcdef";
+	if (n < 16)
+	{
+		if (n > 9)
+			count += ft_putchar(hexa[n] + cap);
+		else
+			count += ft_putchar(hexa[n]);
+	}
+	else
+	{
+		count += ft_putnbr_hexa(n / 16, cap);
+		count += ft_putnbr_hexa(n % 16, cap);
+	}
+	return (count);
+}
+/*
+int main()
+{
+	int n = 600;
+	int count = ft_putnbr_hexa(n);
+	printf("%x\n", n);
+	printf("%i\n", count);
+}
+*/
