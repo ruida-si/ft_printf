@@ -14,13 +14,20 @@
 
 int main()
 {
-	char c = 'A';
-	char *str = 0x0;
-	int number = 2345615;
+	char c = 67;
+	char str[] = "porto";
+	int number = 0;
+	int count;
 
-	int count = ft_printf("MY: char %c percent %% string %s number %X\n", c, str, number);
-	ft_printf("%i chars\n", count);
+	count = ft_printf("MY: char %c percent %% string %s number %i\n", c, str, number);
+	printf("%i chars\n", count);
 
-	count = printf("OR: char %c percent %% string %s number %X\n", c, str, number);
+	count = printf("OR: char %c percent %% string %s number %i\n", c, str, number);
+	printf("%i chars\n", count);
+
+	count = ft_printf("MY: %p\n", (void *)-334);
+	printf("%i chars\n", count);
+
+	count = printf("MY: %p\n", (void *)-334);
 	printf("%i chars\n", count);
 }

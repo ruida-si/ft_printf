@@ -1,4 +1,4 @@
-SOURCES = main.c ft_putstr.c ft_printf.c ft_putnbr.c
+SOURCES = main.c ft_printf.c ft_printf_func.c
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -8,10 +8,10 @@ CC = cc
 
 NAME = libftprintf.a
 
-all: $(NAME)
-
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
+
+all: $(NAME)
 
 ap:
 	$(CC) $(FLAGS) $(SOURCES)

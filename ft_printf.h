@@ -19,8 +19,10 @@
 
 int	ft_printf(const char *format, ...);
 int	ft_putstr(char *str);
-int	ft_putnbr(int n);
+int	ft_putnbr(long number, int count);
 int	ft_putchar(int c);
-int	ft_putnbr_hexa(int n, int cap);
+int	ft_putnbr_hexa(unsigned int n, int cap);
+int	ft_print_ptr(unsigned long long number, int count);
+int	ft_ptr(unsigned long long ptr, int count);
 
 #endif
