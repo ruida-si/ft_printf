@@ -1,4 +1,4 @@
-SOURCES = main.c ft_printf.c ft_printf_func.c
+SOURCES = ft_printf.c ft_printf_func.c
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -24,3 +24,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: all ap clean fclean re
